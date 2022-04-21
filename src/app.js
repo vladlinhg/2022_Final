@@ -71,10 +71,14 @@ function createContactCard(contact) {
   divcemail.innerHTML = 'phone: ' + contact.phone;
   divcinfo.appendChild(divcname);
 
-  let divcimage = document.createElement('div');
+  let divcemail = document.createElement('div');
   divcemail.setAttribute('id', 'display_all_contacts');
-  divcemail.innerHTML = 'name: ' + contact.name;
-  divcinfo.appendChild(divcname);
+  divcemail.innerHTML = 'emal: ' + contact.email;
+  divcinfo.appendChild(divcemail);
+
+  let divcID = document.createElement('div');
+  divcemail.setAttribute('id', 'display_all_contacts');
+  divcemail.innerHTML = 'emal: ' + contact.ID;
 
 }
 
@@ -90,4 +94,11 @@ function addItemToMain(contactName) {
   let contactCard = `
   <div class="display_all_contacts"><img src="img/aramaki"><p>${contactName}</p></div>`
   mainView.insertAdjacentHTML('beforeend', contactCard)
+
+  
+}
+
+function display_all_contacts() {
+  document.getElementById("display_all_contacts").innerHTML = <div class="display_all_contacts"><img src="img/aramaki.png"><p>${contactName}</p></div>;
+
 }
