@@ -51,43 +51,31 @@ const contactsList = [
   },
 ]
 
-function renderView(contact) {
-  //create each element on page3.html and populate
-  let divmain = document.createElement('div');
-  divmain.setAttribute('class', 'main');
+function createContactCard(contact) {
+  let divcontact = document.createElement('div');
+  divcontact.setAttribute('id', 'display_all_contacts');
   let header = document.getElementsByTagName('header')[0];
   header.insertAdjacentElement('afterend', divmain);
-
+    
   let divcinfo = document.createElement('div');
-  divcinfo.setAttribute('class', 'contactinfo');
+  divcinfo.setAttribute('id', 'display_all_contacts');
   divmain.appendChild(divcinfo);
 
   let divcname = document.createElement('div');
-  divcname.setAttribute('class', 'contactname');
-  divcname.innerHTML = contact.name + '<img src="./img/profile.jpg" class="profilepic" alt="Profile picture">';
+  divcemail.setAttribute('id', 'display_all_contacts');
+  divcemail.innerHTML = 'name: ' + contact.name;
   divcinfo.appendChild(divcname);
 
-  let divcemail = document.createElement('div');
-  divcemail.setAttribute('class', 'contactemail');
-  divcemail.innerHTML = 'email: ' + contact.email;
-  divcinfo.appendChild(divcemail);
-
   let divcphone = document.createElement('div');
-  divcphone.setAttribute('class', 'contactphone');
-  divcphone.innerHTML = 'cell: ' + contact.phone
-  divcinfo.appendChild(divcphone);
+  divcemail.setAttribute('id', 'display_all_contacts');
+  divcemail.innerHTML = 'phone: ' + contact.phone;
+  divcinfo.appendChild(divcname);
 
-  let divcadd = document.createElement('div');
-  divcadd.setAttribute('class', 'contactaddress');
-  divcadd.innerHTML = 'address: ' + contact.address;
-  divcinfo.appendChild(divcadd);
+  let divcimage = document.createElement('div');
+  divcemail.setAttribute('id', 'display_all_contacts');
+  divcemail.innerHTML = 'name: ' + contact.name;
+  divcinfo.appendChild(divcname);
 
-  let divcbutt = document.createElement('div');
-  divcbutt.setAttribute('class', 'buttons');
-  divcbutt.innerHTML = '<button class="button edit" value="Edit">Edit</button><button class="button close" value="Close">Close</button>';
-  divcinfo.appendChild(divcbutt);
-
-  //renderView(contactList[0])
 }
 
 function renderIndex(contactList) {
@@ -96,9 +84,10 @@ function renderIndex(contactList) {
   }
 }
 
+
 function addItemToMain(contactName) {
   mainView = document.querySelector('.main')
   let contactCard = `
-  <div class="contact"><p>${contactName}</p></div></a>`
+  <div class="display_all_contacts"><img src="img/aramaki"><p>${contactName}</p></div>`
   mainView.insertAdjacentHTML('beforeend', contactCard)
 }

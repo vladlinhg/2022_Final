@@ -67,7 +67,14 @@ header a:hover {
 }
 
 main {
-  
+  width: 80vw;
+  min-height:100%;
+  flex-wrap: wrap;
+  padding: 10vh 3.25vw;
+  /*overwrite mobile: */
+  flex-direction: row;
+  margin-top: 0;
+  align-items: initial;
 }
 
 #individual_contact {
